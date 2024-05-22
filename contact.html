@@ -5,9 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 36px;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 15px;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    #main {
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    #main h2 {
+        text-align: center;
+        color: #333;
+    }
+    #main p {
+        text-align: justify;
+        color: #666;
+        line-height: 1.6;
+    }
+    #models {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    #models article {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        margin-bottom: 20px;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    #models article:hover {
+        transform: scale(1.05);
+    }
+    #models img {
+        max-width: 100%;
+        border-radius: 10px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+        #models {
+            flex-direction: column;
+            align-items: center;
+        }
+        #models article {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+</style>
 </head>
 <body bgcolor="CEE0EA">
-    
+    <header>
+        <div class="container">
+            <h1>Carros Deportivos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#models">Modelos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container mt-5">
         <h2 class="text-center mb-4">Contáctanos</h2>
         <p class="text-center mb-4">A continuacion ingresa los datos personales que se solicitan y nos pondremos en contacto contigo</p>
@@ -41,6 +150,9 @@
     <p class="text-center mb-4">Ubicacion: Cl 18 #34 - 104, Pasto, Nariño</p>
     <center><img src="imagenes/ubicacion.PNG" alt="lambo" width="50%" height="50%"> </center>
 
+    <footer class="mt-5 bg-dark text-white text-center py-3">
+        <p>Derechos de autor &copy; 2024 Carros Deportivos. Todos los derechos reservados.</p>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
