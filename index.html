@@ -3,55 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Carros Deportivos</title>
+    <title>Carros Deportivos</title>
     <style>
-        /* Estilos CSS */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f8f8f8;
         }
         header {
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
         }
-        nav {
-            background-color: #343a40;
-            padding: 10px;
-            text-align: center;
+        header h1 {
+            margin: 0;
+            font-size: 36px;
         }
-        nav a {
-            color: white;
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            font-weight: bold;
         }
         .container {
             width: 80%;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 20px auto;
+            overflow: hidden;
         }
-        section {
+        #main {
             padding: 20px;
-            background-color: white;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        #main h2 {
+            text-align: center;
+            color: #333;
+        }
+        #main p {
+            text-align: justify;
+            color: #666;
+            line-height: 1.6;
+        }
+        #models {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        #models article {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
             margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        #models article:hover {
+            transform: scale(1.05);
+        }
+        #models img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: auto;
+            margin-bottom: 10px;
         }
         footer {
-            background-color: #343a40;
-            color: white;
+            background-color: #333;
+            color: #fff;
             text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            #models {
+                flex-direction: column;
+                align-items: center;
+            }
+            #models article {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+        .task-container {
+            margin-top: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .task-container h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .task-container input[type="text"] {
+            width: calc(100% - 22px);
             padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .task-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .task-container li {
+            background: #f4f4f4;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .task-container li:last-child {
+            border-bottom: none;
+        }
+        .task-container li.completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .task-container .complete-btn, .task-container .delete-btn {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .task-container .delete-btn {
+            background: #ff4b4b;
+        }
+        .task-container .complete-btn:hover {
+            background: #45a049;
+        }
+        .task-container .delete-btn:hover {
+            background: #ff1f1f;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -59,45 +166,109 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      Navegación
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Información</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
+    <header>
+        <div class="container">
+            <h1>Carros Deportivos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#models">Modelos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="main" class="container">
+        <h2>Bienvenidos a Carros Deportivos</h2>
+        <p>
+            En <strong>Carros Deportivos</strong>, te damos la bienvenida a un espacio dedicado exclusivamente a la pasión por los automóviles de alta gama. Este sitio está diseñado para los verdaderos entusiastas de la velocidad, el diseño y la innovación tecnológica en el mundo de los carros deportivos. Queremos que cada visita sea una experiencia única, donde puedas descubrir, aprender y admirar los vehículos que definen la excelencia automovilística.
+        </p>
+        <p>
+            Nuestra misión es ofrecerte un recorrido completo por el fascinante universo de los carros deportivos. Aquí encontrarás información detallada sobre los modelos más icónicos y las últimas novedades del mercado. Desde los clásicos que han marcado historia hasta los superdeportivos contemporáneos que desafían los límites de la ingeniería y el diseño.
+        </p>
+        <p></p>
+        
+        <div id="models">
+            <article>
+                <img src="https://via.placeholder.com/300" alt="Modelo 1">
+                <h3>Modelo 1</h3>
+                <p>Descripción del modelo 1.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300" alt="Modelo 2">
+                <h3>Modelo 2</h3>
+                <p>Descripción del modelo 2.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300" alt="Modelo 3">
+                <h3>Modelo 3</h3>
+                <p>Descripción del modelo 3.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300" alt="Modelo 4">
+                <h3>Modelo 4</h3>
+                <p>Descripción del modelo 4.</p>
+            </article>
+        </div>
+
+        <div class="task-container">
+            <h2>Lista de Tareas</h2>
+            <input type="text" id="taskInput" placeholder="Agregar nueva tarea...">
+            <ul id="taskList"></ul>
+        </div>
     </div>
-  </nav>
-            <section>
-            <h2>¡Bienvenido!</h2>
-            <p>Explora nuestra increíble colección de carros deportivos. Desde los clásicos hasta los últimos modelos, tenemos algo para todos los entusiastas de los carros.</p>
-        </section>
-        <section>
-            <h2>Últimos Modelos</h2>
-            <p>Descubre los últimos lanzamientos en el mundo de los carros deportivos. Conoce las características, especificaciones y precios de los modelos más emocionantes.</p>
-        </section>
-        <section>
-            <h2>Galería</h2>
-            <p>Sumérgete en nuestra galería de imágenes y admira la belleza de los carros deportivos en acción. Desde carreras hasta paseos panorámicos, nuestras fotos capturan la esencia de la velocidad y el lujo.</p>
-        </section>
-    </div>
+    
     <footer>
-        <p>&copy; 2024 Página de Carros Deportivos</p>
+        <p>Derechos de autor &copy; 2024 Carros Deportivos. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const taskInput = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");
+
+            function addTask() {
+                const taskText = taskInput.value.trim();
+                if (taskText !== "") {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                        <span>${taskText}</span>
+                        <button class="complete-btn">Completar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    `;
+                    taskList.appendChild(li);
+                    taskInput.value = "";
+                    addTaskEventListeners(li);
+                }
+            }
+
+            function completeTask(li) {
+                li.classList.toggle("completed");
+            }
+
+            function deleteTask(li) {
+                li.remove();
+            }
+
+            function addTaskEventListeners(li) {
+                const completeBtn = li.querySelector(".complete-btn");
+                const deleteBtn = li.querySelector(".delete-btn");
+                completeBtn.addEventListener("click", function() {
+                    completeTask(li);
+                });
+                deleteBtn.addEventListener("click", function() {
+                    deleteTask(li);
+                });
+            }
+
+            taskInput.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    addTask();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

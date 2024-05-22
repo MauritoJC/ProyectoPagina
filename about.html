@@ -1,1 +1,176 @@
-hola
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Carros Deportivos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        #main {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        #main h2 {
+            text-align: center;
+            color: #333;
+        }
+        #main p {
+            text-align: justify;
+            color: #666;
+            line-height: 1.6;
+        }
+        #models {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        #models article {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        #models article:hover {
+            transform: scale(1.05);
+        }
+        #models img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            #models {
+                flex-direction: column;
+                align-items: center;
+            }
+            #models article {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <h1>Carros Deportivos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#models">Modelos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Sobre Nosotros</h2>
+        <p>
+            En Carros Deportivos, nos apasionan los automóviles de alta gama y queremos compartir esa pasión contigo. Nuestra misión es proporcionarte un espacio donde puedas explorar y disfrutar del mundo de los carros deportivos en toda su gloria. Fundada por entusiastas de los automóviles, nuestra página se ha convertido en una fuente confiable de información para los amantes de la velocidad y el diseño. Nos esforzamos por ofrecerte reseñas detalladas, comparativas objetivas y noticias actualizadas sobre los últimos modelos y tendencias del mundo del automóvil.
+        </p>
+        <p>
+            Aquí, encontrarás todo lo que necesitas saber sobre tus marcas y modelos favoritos, desde datos técnicos y especificaciones hasta análisis de rendimiento y opiniones expertas. Además, nos mantenemos al tanto de los eventos y exhibiciones más importantes de la industria, para que siempre estés al día con lo último en carros deportivos. Nuestro equipo está formado por profesionales apasionados por los autos, comprometidos en brindarte la mejor experiencia posible en nuestra página. Siempre estamos abiertos a tus sugerencias y comentarios, así que no dudes en ponerte en contacto con nosotros si tienes alguna pregunta o quieres compartir tu opinión.
+        </p>
+        <p>
+            En Carros Deportivos, también nos preocupamos por el medio ambiente y la seguridad vial. Promovemos prácticas de conducción responsables y fomentamos la adopción de tecnologías ecoamigables en la industria automotriz. Estamos comprometidos con la excelencia y la innovación, y nos esforzamos por ofrecerte contenido de calidad que enriquezca tu experiencia en el mundo de los carros deportivos.
+        </p>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Nuestros Carros Destacados</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/Camaro.jpeg" class="card-img-top" alt="Imagen 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Carro Deportivo 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium finibus velit, vel sollicitudin velit ullamcorper eget.</p>
+                        <a href="#" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/Koenigsegg.jpg" class="card-img-top" alt="Imagen 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Carro Deportivo 2</h5>
+                        <p class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean posuere euismod nisi sit amet aliquam.</p>
+                        <a href="#" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/Mustang.png" class="card-img-top" alt="Imagen 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Carro Deportivo 3</h5>
+                        <p class="card-text">Maecenas vestibulum, mi sed ullamcorper aliquam, justo nisi sollicitudin erat, vel consectetur justo dui et ipsum.</p>
+                        <a href="#" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 bg-dark text-white text-center py-3">
+        <p>Derechos de autor &copy; 2024 Carros Deportivos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
